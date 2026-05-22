@@ -5,9 +5,97 @@
 ![Tests](https://img.shields.io/badge/Tests-JUnit%204%20%26%205-green)
 ![UI](https://img.shields.io/badge/UI-JavaFX-purple)
 
+## 📸 Captures d’écran
+
+| Menu principal                                             | Gameplay                                               | Gameplay 2                                             |
+|------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|
+| ![Menu principal](src/main/resources/screenshots/menu.png) | ![Gameplay](src/main/resources/screenshots/player.png) | ![Gameplay 2](src/main/resources/screenshots/save.png) |
+
+| Restart                                               | Game Over                                               | Victoire                                              |
+|-------------------------------------------------------|---------------------------------------------------------|-------------------------------------------------------|
+| ![Restart](src/main/resources/screenshots/salle2.png) | ![Game Over](src/main/resources/screenshots/salle3.png) | ![Victoire](src/main/resources/screenshots/fight.png) |
+
+| Restart                                                   | Game Over                                            | Victoire                                             |
+|-----------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
+| ![Restart](src/main/resources/screenshots/competence.png) | ![Game Over](src/main/resources/screenshots/win.png) | ![Victoire](src/main/resources/screenshots/lose.png) |
+
+-->
+
+## 🗂️ Structure du projet
+
+```text
+Bugemon/
+├── pom.xml
+├── readme.md
+├── iteration-1.jar
+├── iteration-2.jar
+├── iteration-3.jar
+├── iteration-4.jar
+├── src/
+│   ├── main/
+│   │   ├── java/ulb/
+│   │   │   ├── Main.java
+│   │   │   ├── audio/
+│   │   │   │   └── AudioManager.java
+│   │   │   ├── controller/
+│   │   │   │   ├── AudioConfig.java
+│   │   │   │   ├── BattleController.java
+│   │   │   │   ├── BattleFlowController.java
+│   │   │   │   ├── MainController.java
+│   │   │   │   ├── NavigationController.java
+│   │   │   │   ├── RunLifecycleController.java
+│   │   │   │   ├── SceneManager.java
+│   │   │   │   └── TeamManagerController.java
+│   │   │   ├── dto/
+│   │   │   │   ├── BattleStateDTO.java
+│   │   │   │   ├── BugemonDisplayDTO.java
+│   │   │   │   ├── FloorMapDTO.java
+│   │   │   │   ├── SkillTreeStateDTO.java
+│   │   │   │   └── ...
+│   │   │   ├── models/
+│   │   │   │   ├── battle/
+│   │   │   │   ├── data/
+│   │   │   │   ├── game/
+│   │   │   │   └── skilltree/
+│   │   │   ├── parsing/
+│   │   │   │   ├── AttackData.java
+│   │   │   │   ├── BugemonData.java
+│   │   │   │   ├── ItemData.java
+│   │   │   │   ├── JsonDataLoader.java
+│   │   │   │   └── SkillTreeData.java
+│   │   │   └── view/
+│   │   │       ├── BattleView.java
+│   │   │       ├── FloorMapView.java
+│   │   │       ├── MainWindowView.java
+│   │   │       ├── TeamManagerView.java
+│   │   │       └── ...
+│   │   └── resources/
+│   │       ├── assets/bugemons/png/
+│   │       ├── audio/
+│   │       ├── css/style.css
+│   │       ├── data/
+│   │       ├── fonts/
+│   │       └── images/
+│   └── test/
+│       └── java/ulb/
+│           ├── controller/
+│           ├── models/
+│           ├── parsing/
+│           └── view/
+└── team/
+	├── Burnchartdown.ods
+	├── histoires_estimations.md
+	├── rapport_architecture.md
+	└── repartition_taches.md
+```
+
+Cette version montre surtout les sous-dossiers et quelques fichiers représentatifs ; les autres classes suivent la même logique dans chaque package.
+
 ---
 ## Table des matieres
 
+- [Captures du projet](#-captures-du-projet)
+- [Structure du projet](#-structure-du-projet)
 - [Prerequis](#-prerequis)
 - [Verification de l'environnement](#-verification-de-lenvironnement)
 - [Dependances](#-dependances)
@@ -121,9 +209,11 @@ Les documents d'equipe se trouvent dans `team/`, notamment :
 - `team/repartition_tache.md`
 - `team/histoires_estimations.md`
 ---
-## 🗂️ Structure du projet
+## 🧩 Repartition des taches
 
-- `src/main/java/` : code source principal.
-- `src/main/resources/` : ressources (assets, donnees, etc.).
-- `src/test/java/` : tests unitaires et d'integration.
-- `target/` : fichiers generes par la compilation et les tests.
+La repartition detaillee du travail est documentee dans :
+
+- `team/repartition_taches.md`
+- `team/histoires_estimations.md`
+
+---
