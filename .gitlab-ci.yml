@@ -1,0 +1,21 @@
+image: maven:4.0.0-rc-5-ibm-semeru-25-noble
+
+stages:
+  - test
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  # Force software rendering as CI runners lack a physical GPU
+  # glass.platform=gtk ensures JavaFX uses the Linux GTK toolkit
+  JAVA_TOOL_OPTIONS: "-Dprism.order=sw -Dglass.platform=gtk"
+
+test:
+  stage: test
+  before_script:
+    # Install system dependencies required for JavaFX and Xvfb
+    - apt-get update -qy
+    - apt-get install -y xvfb libgtk-3-0 libpulse0 libasound2t64 libgl1
+  script:
+    # xvfb-run creates a virtual frame buffer (virtual screen)
+    
+    - xvfb-run --server-args="-screen 0 1280x1024x24" mvn test -Dtestfx.robot=glass -Dtestfx.headless=false

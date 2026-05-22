@@ -1,0 +1,426 @@
+.root {
+  -fx-background-image: url("../images/backgroundImage.jpg");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: cover;
+  -fx-background-position: center;
+}
+
+#fightScene {
+  -fx-background-image: url("../images/fightBackgroundImage.png");
+}
+
+.button {
+  -fx-background-radius: 10;
+  -fx-border-radius: 10;
+  -fx-border-color: black;
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-weight: normal;
+  -fx-font-style: italic;
+  -fx-font-size: 16px;
+  -fx-text-fill: white;
+  -fx-padding: 10 20;
+  -fx-text-overrun: ellipsis;
+  -fx-wrap-text: true;
+}
+
+.label {
+  -fx-wrap-text: true;
+  -fx-text-overrun: ellipsis;
+}
+
+.title {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-weight: bold;
+  -fx-font-size: 60px;
+  -fx-text-fill: #0fa2f1;
+  -fx-effect: dropshadow(one-pass-box, #755858, 0, 0, 3, 3);
+}
+
+.miniTitle {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-weight: normal;
+  -fx-font-style: italic;
+  -fx-font-size: 24px;
+  -fx-text-fill: #0fa2f1;
+  -fx-effect: dropshadow(one-pass-box, #755858, 0, 0, 3, 3);
+}
+
+.statsText {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-weight: normal;
+  -fx-font-style: italic;
+  -fx-font-size: 14px;
+  -fx-text-fill: #0fa2f1;
+}
+
+.playBtn {
+  -fx-background-color: #f1c40f;
+  -fx-text-fill: #2c3e50;
+}
+.playBtn:hover {
+  -fx-background-color: #f39c12;
+}
+
+/* tous les boutons suivants */
+.nextBtn {
+  -fx-background-color: #2980b9;
+}
+.nextBtn:hover {
+  -fx-background-color: #3498db;
+}
+
+/* bouton retour ou quitter (rouge) */
+.backBtn {
+  -fx-background-color: #c0392b;
+}
+.backBtn:hover {
+  -fx-background-color: #e74c3c;
+}
+
+.floraStyle {
+  -fx-background-color: #27ae60;
+  -fx-border-color: #1e8449;
+}
+.floraStyle:hover {
+  -fx-background-color: #2ecc71;
+}
+
+.pyroStyle {
+  -fx-background-color: #e67e22;
+  -fx-border-color: #d35400;
+}
+.pyroStyle:hover {
+  -fx-background-color: #f39c12;
+}
+
+.aquaStyle {
+  -fx-background-color: #2980b9;
+  -fx-border-color: #2471a3;
+}
+.aquaStyle:hover {
+  -fx-background-color: #3498db;
+}
+
+.lithoStyle {
+  -fx-background-color: #7f8c8d;
+  -fx-border-color: #707b7c;
+}
+.lithoStyle:hover {
+  -fx-background-color: #95a5a6;
+}
+
+.text-field {
+  -fx-background-color: #34495e;
+  -fx-text-fill: white;
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-size: 10px;
+  -fx-border-color: #7f8c8d;
+  -fx-border-width: 0 0 2 0;
+  -fx-padding: 8 12;
+  -fx-background-radius: 5;
+}
+
+.text-field:focused {
+  -fx-border-color: #f1c40f;
+  -fx-background-color: #2c3e50;
+}
+
+.scroll-pane {
+  -fx-background-color: transparent;
+  -fx-background-insets: 0;
+  -fx-padding: 0;
+}
+
+.scroll-pane > .viewport {
+  -fx-background-color: #2c3e50;
+}
+
+.health-bar-bg {
+  -fx-fill: #34495e;
+  -fx-stroke: #2c3e50;
+  -fx-stroke-width: 2;
+}
+
+.health-bar-fg {
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 0);
+}
+
+.hp-high {
+  -fx-fill: linear-gradient(to bottom, #2ecc71, #27ae60);
+}
+
+.hp-medium {
+  -fx-fill: linear-gradient(to bottom, #f1c40f, #f39c12);
+}
+
+.hp-low {
+  -fx-fill: linear-gradient(to bottom, #e74c3c, #c0392b);
+}
+
+.health-bar-text {
+  -fx-text-fill: white;
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-weight: bold;
+  -fx-font-size: 14px;
+  -fx-effect: dropshadow(one-pass-box, black, 3, 0.8, 0, 0);
+}
+
+.health-bar-area {
+  -fx-background-color: rgba(0, 0, 0, 0.6);
+  -fx-background-radius: 15;
+  -fx-padding: 20;
+}
+
+.actions-area {
+  -fx-background-color: rgba(0, 0, 0, 0.6);
+}
+
+.disabledChoiceBtn {
+  -fx-background-color: #7f8c8d;
+  -fx-border-color: #5d6d7e;
+  -fx-text-fill: #ecf0f1;
+  -fx-opacity: 0.65;
+}
+
+.game-popup {
+  -fx-background-color: rgba(12, 20, 30, 0.92);
+  -fx-background-radius: 14;
+  -fx-border-color: #f1c40f;
+  -fx-border-width: 2;
+  -fx-border-radius: 14;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 18, 0.3, 0, 8);
+}
+
+.game-popup-text {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-style: italic;
+  -fx-font-size: 16px;
+  -fx-text-fill: #f8f1c8;
+}
+
+/* Ecran de défaite */
+.game-over-title {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-weight: bold;
+  -fx-font-size: 72px;
+  -fx-text-fill: #c0392b;
+  -fx-effect: dropshadow(one-pass-box, #000000, 6, 0.6, 0, 4);
+}
+
+.game-over-subtitle {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-style: italic;
+  -fx-font-size: 20px;
+  -fx-text-fill: #0fa2f1;
+  -fx-effect: dropshadow(one-pass-box, #000000, 3, 0.5, 0, 2);
+}
+
+/* Ecran de victoire */
+.victory-title {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-weight: bold;
+  -fx-font-size: 72px;
+  -fx-text-fill: #2ecc71;
+  -fx-effect: dropshadow(one-pass-box, #000000, 6, 0.6, 0, 4);
+}
+
+.victory-subtitle {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-style: italic;
+  -fx-font-size: 20px;
+  -fx-text-fill: #0fa2f1;
+  -fx-effect: dropshadow(one-pass-box, #000000, 3, 0.5, 0, 2);
+}
+
+/* Carte d'étage */
+.floor-map-room-current {
+  -fx-fill: #f1c40f;
+  -fx-stroke: #f39c12;
+  -fx-stroke-width: 3;
+}
+
+.floor-map-room-visited {
+  -fx-fill: #7f8c8d;
+  -fx-stroke: #5d6d7e;
+  -fx-stroke-width: 3;
+}
+
+.floor-map-room-available {
+  -fx-fill: #2980b9;
+  -fx-stroke: #3498db;
+  -fx-stroke-width: 3;
+}
+
+.floor-map-room-locked {
+  -fx-fill: #2c3e50;
+  -fx-stroke: #34495e;
+  -fx-stroke-width: 3;
+}
+
+.map-label {
+  -fx-background-color: #2d241e, #fdf5e6;
+  -fx-background-insets: 0, 2;
+  -fx-background-radius: 8, 6;
+  -fx-padding: 3 12 3 12;
+  -fx-text-fill: #2d241e;
+  -fx-font-weight: bold;
+  -fx-font-size: 13px;
+}
+
+/* Ecran de défaite */
+.game-over-title {
+    -fx-font-family: "Vipnagorgialla";
+    -fx-font-weight: bold;
+    -fx-font-size: 72px;
+    -fx-text-fill: #c0392b;
+    -fx-effect: dropshadow(one-pass-box, #000000, 6, 0.6, 0, 4);
+}
+
+.game-over-subtitle {
+    -fx-font-family: "Vipnagorgialla";
+    -fx-font-style: italic;
+    -fx-font-size: 20px;
+    -fx-text-fill: #0fa2f1;
+    -fx-effect: dropshadow(one-pass-box, #000000, 3, 0.5, 0, 2);
+}
+
+/* Carte d'étage */
+.floor-map-room-current {
+    -fx-fill: #f1c40f;
+    -fx-stroke: #f39c12;
+    -fx-stroke-width: 3;
+}
+
+.floor-map-room-visited {
+    -fx-fill: #7f8c8d;
+    -fx-stroke: #5d6d7e;
+    -fx-stroke-width: 3;
+}
+
+.floor-map-room-available {
+    -fx-fill: #2980b9;
+    -fx-stroke: #3498db;
+    -fx-stroke-width: 3;
+}
+
+.floor-map-room-locked {
+    -fx-fill: #2c3e50;
+    -fx-stroke: #34495e;
+    -fx-stroke-width: 3;
+}
+
+.combo-box {
+    -fx-background-color: #34495e;
+    -fx-font-family: "Vipnagorgialla";
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-border-color: #7f8c8d;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-radius: 5;
+}
+
+.combo-box:showing {
+    -fx-background-color: #2c3e50;
+    -fx-border-color: #f1c40f;
+}
+
+.combo-box .label {
+    -fx-text-fill: white;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #f1c40f;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #2c3e50;
+    -fx-border-color: #7f8c8d;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.combo-box-popup .list-cell {
+    -fx-font-family: "Vipnagorgialla";
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-background-color: transparent;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #34495e;
+    -fx-text-fill: #f1c40f;
+}
+
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: #2980b9;
+}
+/* Nouvelle partie — choix d'emplacement */
+.run-slot-panel {
+  -fx-background-color: rgba(0, 0, 0, 0.72);
+  -fx-border-color: #f1c40f;
+  -fx-border-width: 2;
+  -fx-border-radius: 12;
+  -fx-background-radius: 12;
+  -fx-padding: 28 32 28 32;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 20, 0.25, 0, 6);
+  -fx-max-width: 560;
+}
+
+.run-slot-panel .radio-button {
+  -fx-font-family: "Vipnagorgialla";
+  -fx-font-size: 14px;
+  -fx-font-style: italic;
+  -fx-text-fill: #0fa2f1;
+}
+
+.run-slot-panel .radio-button:selected {
+  -fx-text-fill: #f1c40f;
+}
+
+.run-slot-panel .radio-button .radio {
+  -fx-background-color: #34495e;
+  -fx-border-color: #7f8c8d;
+  -fx-border-radius: 8;
+  -fx-background-radius: 8;
+}
+
+.run-slot-panel .radio-button:selected .radio {
+  -fx-background-color: #f1c40f;
+  -fx-border-color: #f39c12;
+}
+
+.run-slot-row-occupied {
+  -fx-background-color: rgba(241, 196, 15, 0.08);
+  -fx-border-color: rgba(241, 196, 15, 0.35);
+  -fx-border-width: 1;
+  -fx-border-radius: 8;
+  -fx-background-radius: 8;
+  -fx-padding: 6 10 6 10;
+}
+
+.run-slot-row-free {
+  -fx-background-color: rgba(52, 73, 94, 0.45);
+  -fx-border-color: rgba(127, 140, 141, 0.5);
+  -fx-border-width: 1;
+  -fx-border-radius: 8;
+  -fx-background-radius: 8;
+  -fx-padding: 6 10 6 10;
+}
+
+/* Nouvelle partie — liste d'équipes */
+.new-game-scroll {
+  -fx-background-color: rgba(0, 0, 0, 0.32);
+  -fx-border-color: rgba(241, 196, 15, 0.42);
+  -fx-border-width: 1;
+  -fx-border-radius: 10;
+  -fx-background-radius: 10;
+  -fx-padding: 0;
+}
+
+.new-game-scroll > .viewport {
+  -fx-background-color: transparent;
+}

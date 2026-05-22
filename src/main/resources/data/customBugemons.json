@@ -1,0 +1,18 @@
+{
+  "bugemons": [
+    {
+      "id": "knight",
+      "nom": "Knight",
+      "type": "Flora",
+      "stats": {
+        "pv": 90,
+        "attaque": 55,
+        "defense": 40,
+        "initiative": 50
+      },
+      "attaques": ["fouet_liane", "pollen_sournois", "racines_vives"],
+      "sprite": "knight.png",
+      "starter": true
+    }
+  ]
+}
