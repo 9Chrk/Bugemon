@@ -23,6 +23,8 @@
 - [Structure du projet](#-structure-du-projet)
 - [Repartition des taches](#-repartition-des-taches)
 
+---
+
 ## 📸 Captures d’écran
 
 | Menu principal                                             | Gameplay                                               | Gameplay 2                                             |
