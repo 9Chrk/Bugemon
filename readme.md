@@ -1,9 +1,27 @@
-# INFO-F307 - Genie logiciel et gestion de projets - groupe 9
+# INFO-F307 - Genie logiciel et gestion de projets 
 # Bugemon
 ![Java](https://img.shields.io/badge/Java-18%2B-orange)
 ![Maven](https://img.shields.io/badge/Build-Maven-blue)
 ![Tests](https://img.shields.io/badge/Tests-JUnit%204%20%26%205-green)
 ![UI](https://img.shields.io/badge/UI-JavaFX-purple)
+
+---
+## Table des matieres
+
+- [Captures du projet](#-captures-du-projet)
+- [Structure du projet](#-structure-du-projet)
+- [Prerequis](#-prerequis)
+- [Verification de l'environnement](#-verification-de-lenvironnement)
+- [Dependances](#-dependances)
+- [Compiler et lancer](#-compiler-et-lancer)
+- [Tests](#-tests)
+- [Commandes utiles](#-commandes-utiles)
+- [Generer et lancer le .jar](#-generer-et-lancer-le-jar)
+- [Problemes frequents](#-problemes-frequents)
+- [Documentation Javadoc](#-documentation-javadoc)
+- [Travail d'equipe](#-travail-dequipe)
+- [Structure du projet](#-structure-du-projet)
+- [Repartition des taches](#-repartition-des-taches)
 
 ## 📸 Captures d’écran
 
@@ -19,7 +37,6 @@
 |-----------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
 | ![Restart](src/main/resources/screenshots/competence.png) | ![Game Over](src/main/resources/screenshots/win.png) | ![Victoire](src/main/resources/screenshots/lose.png) |
 
--->
 
 ## 🗂️ Structure du projet
 
@@ -88,26 +105,6 @@ Bugemon/
 	├── rapport_architecture.md
 	└── repartition_taches.md
 ```
-
-Cette version montre surtout les sous-dossiers et quelques fichiers représentatifs ; les autres classes suivent la même logique dans chaque package.
-
----
-## Table des matieres
-
-- [Captures du projet](#-captures-du-projet)
-- [Structure du projet](#-structure-du-projet)
-- [Prerequis](#-prerequis)
-- [Verification de l'environnement](#-verification-de-lenvironnement)
-- [Dependances](#-dependances)
-- [Compiler et lancer](#-compiler-et-lancer)
-- [Tests](#-tests)
-- [Commandes utiles](#-commandes-utiles)
-- [Generer et lancer le .jar](#-generer-et-lancer-le-jar)
-- [Problemes frequents](#-problemes-frequents)
-- [Documentation Javadoc](#-documentation-javadoc)
-- [Travail d'equipe](#-travail-dequipe)
-- [Structure du projet](#-structure-du-projet)
-- [Repartition des taches](#-repartition-des-taches)
 
 ---
 ## 📌 Prerequis
