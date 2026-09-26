@@ -12,8 +12,6 @@ Le jeu propose la gestion d’équipes, plusieurs difficultés, des objets de pr
 > Projet académique ULB — INFO-F307.
 > Génie logiciel et gestion de projets
 
----
-
 <a id="captures-decran"></a>
 
 ## 📸 Captures d’écran
@@ -49,8 +47,6 @@ Le jeu propose la gestion d’équipes, plusieurs difficultés, des objets de pr
 - [Javadoc](#javadoc)
 - [Licence](#licence)
 
----
-
 <a id="fonctionnalites"></a>
 
 ## ✨ Fonctionnalités
@@ -63,8 +59,6 @@ Le jeu propose la gestion d’équipes, plusieurs difficultés, des objets de pr
 - **Récompenses et progression** : les victoires accordent des récompenses et de l’expérience ; les montées de niveau proposent un choix de bonus de statistiques.
 - **Arbre de compétences** : les points gagnés dans la progression servent à débloquer des bonus persistants, par exemple sur les statistiques, l’expérience, la régénération, les objets ou les dégâts.
 - **Ambiance visuelle et sonore** : les écrans utilisent le CSS, les polices, les sprites, les fonds et les médias fournis dans `src/main/resources`.
-
----
 
 <a id="prerequis"></a>
 
@@ -80,8 +74,6 @@ Vérifiez les outils installés :
 java -version
 mvn -version
 ```
-
----
 
 <a id="installation"></a>
 
@@ -102,8 +94,6 @@ Pour compiler sans lancer l’interface :
 mvn compile
 ```
 
----
-
 <a id="lancement"></a>
 
 ## ▶️ Lancement
@@ -122,8 +112,6 @@ mvn exec:java
 
 La classe `ulb.Main` crée la fenêtre JavaFX, lui donne le titre « Bugémon », puis affiche le menu principal.
 
----
-
 <a id="utilisation"></a>
 
 ## 🎮 Utilisation
@@ -133,8 +121,6 @@ La classe `ulb.Main` crée la fenêtre JavaFX, lui donne le titre « Bugémon »
 3. Choisissez un emplacement, donnez un nom à la partie, puis sélectionnez un objet de préparation.
 4. Depuis la carte, entrez dans une salle accessible. En combat, les actions disponibles sont **Attaquer**, **Sac**, **Changer** et **Abandonner**.
 5. Après une victoire, poursuivez l’exploration, choisissez les récompenses et les bonus de niveau proposés. Utilisez **Charger une partie** ou **Continuer** pour reprendre une sauvegarde.
-
----
 
 <a id="donnees-et-sauvegardes"></a>
 
@@ -150,8 +136,6 @@ Les catalogues statiques sont lus depuis les ressources JSON :
 `JsonDataLoader` charge ces fichiers avec Jackson et indexe les entrées par identifiant ; les identifiants dupliqués sont refusés. Les données de profil (équipes, inventaire, emplacements de partie, progression de tour et arbre de compétences) sont sérialisées au format JSON dans `teams_save.json`, à la racine de travail. Ce fichier est créé par le jeu et ignoré par Git.
 
 La création d’un Bugémon personnalisé écrit dans `custom.json` et copie l’image choisie dans le dossier local `images/`. Ces deux emplacements sont eux aussi ignorés par Git.
-
----
 
 <a id="architecture"></a>
 
@@ -172,8 +156,6 @@ La logique est séparée en plusieurs ensembles :
 
 Un combat travaille sur des copies d’équipes afin d’isoler sa résolution de l’état persistant. À sa fin, `TeamManagerController` synchronise les PV, l’expérience et les niveaux de l’équipe active, tandis que `GameStateService` et `RunLifecycleController` mettent à jour puis sauvegardent la progression de la partie.
 
----
-
 <a id="flux-general"></a>
 
 ## 🧬 Flux général
@@ -190,8 +172,6 @@ ulb.Main
 ```
 
 Lorsqu’une salle de combat est ouverte, `BattleFlowController` transforme l’action choisie en une `BattleAction` et délègue sa résolution à `BattleOrchestrationService` et aux classes de `ulb.models.battle`. Le résultat détermine l’attribution d’expérience, les éventuels choix de niveau, les récompenses, l’avancement sur la carte ou l’affichage de la défaite. Les bonus calculés à partir de `SkillTreeProgress` sont appliqués lors du démarrage ou du chargement de la partie.
-
----
 
 <a id="structure-du-projet"></a>
 
@@ -224,8 +204,6 @@ Lorsqu’une salle de combat est ouverte, `BattleFlowController` transforme l’
 └── team/                            # Documents de suivi et d’architecture
 ```
 
----
-
 <a id="tests"></a>
 
 ## 🧪 Tests
@@ -238,8 +216,6 @@ mvn test
 
 Les tests GUI reposent sur TestFX. En environnement Linux sans affichage, exécutez-les dans une session graphique virtuelle ; la configuration GitLab CI fournie utilise `xvfb-run` et le rendu logiciel JavaFX.
 
----
-
 <a id="problemes-frequents"></a>
 
 ## ❗ Problèmes fréquents
@@ -250,8 +226,6 @@ Les tests GUI reposent sur TestFX. En environnement Linux sans affichage, exécu
 - **Données personnalisées introuvables** : `custom.json` et le dossier `images/` sont relatifs au répertoire depuis lequel l’application est lancée ; conservez-les à la racine de travail si vous souhaitez retrouver ces créations.
 - **Sauvegarde supprimée après un nettoyage Maven** : la configuration de nettoyage Maven cible `teams_save.json`. Copiez ce fichier avant d’exécuter `mvn clean` si vous souhaitez conserver une sauvegarde locale.
 
----
-
 <a id="documentation"></a>
 
 ## 📄 Documentation
@@ -260,8 +234,6 @@ Les tests GUI reposent sur TestFX. En environnement Linux sans affichage, exécu
 - [Répartition des tâches](team/repartition_taches.md) : pilotage et statut des histoires réalisées.
 - [Histoires et estimations](team/histoires_estimations.md) : besoins fonctionnels et estimations associés.
 - [Burndown](team/Burnchartdown.ods) : suivi d’équipe au format OpenDocument Spreadsheet.
-
----
 
 <a id="javadoc"></a>
 
@@ -272,8 +244,6 @@ La documentation API peut être générée avec Maven ; les pages produites sont
 ```bash
 mvn javadoc:javadoc -DadditionalJOption=-Xdoclint:none
 ```
-
----
 
 <a id="licence"></a>
 
