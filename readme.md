@@ -9,8 +9,8 @@ Bugemon est un jeu de **combat au tour par tour et de progression en JavaFX**. C
 
 Le jeu propose la gestion d’équipes, plusieurs difficultés, des objets de préparation, un arbre de compétences et des emplacements de sauvegarde. Les créatures et les règles s’appuient sur des données JSON.
 
-> Projet académique ULB — INFO-F307.
-> Génie logiciel et gestion de projets
+> Projet académique ULB — INFO-F307
+> Génie logiciel et gestion de projets · 2025–2026
 
 <a id="captures-decran"></a>
 
