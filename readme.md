@@ -1,13 +1,20 @@
 # Bugemon
 
-![Java 18](https://img.shields.io/badge/Java-18-orange)
-![JavaFX 23.0.2](https://img.shields.io/badge/JavaFX-23.0.2-purple)
-![Maven](https://img.shields.io/badge/Build-Maven-blue)
-![Licence MIT](https://img.shields.io/badge/Licence-MIT-green)
+![Java 18](https://img.shields.io/badge/Java-18-orange?style=flat-square)
+![JavaFX 23.0.2](https://img.shields.io/badge/JavaFX-23.0.2-purple?style=flat-square)
+![Maven](https://img.shields.io/badge/Build-Maven-blue?style=flat-square)
+![Licence MIT](https://img.shields.io/badge/Licence-MIT-green?style=flat-square)
 
-Projet réalisé dans le cadre du cours **INFO-F307 — Génie logiciel et gestion de projets**. **Bugemon** est un jeu de combat et de progression en JavaFX : le joueur compose une équipe de Bugémons, explore les étages de la Tour NO et affronte des équipes adverses pour atteindre le boss final.
+Bugemon est un jeu de **combat au tour par tour et de progression en JavaFX**. Composez une équipe de Bugémons, explorez les étages de la Tour NO et affrontez des équipes adverses jusqu’au boss final.
 
-L’application permet de gérer des équipes, démarrer ou reprendre une partie depuis un emplacement de sauvegarde, choisir une difficulté, sélectionner un objet de préparation et faire évoluer son équipe au fil des combats. Son interface JavaFX s’appuie sur des données métier JSON, des images, des polices, une feuille de style et des pistes audio embarquées dans le projet.
+Le jeu propose la gestion d’équipes, plusieurs difficultés, des objets de préparation, un arbre de compétences et des emplacements de sauvegarde. Les créatures et les règles s’appuient sur des données JSON.
+
+> Projet académique ULB — INFO-F307.
+> Génie logiciel et gestion de projets
+
+---
+
+<a id="captures-decran"></a>
 
 ## 📸 Captures d’écran
 
@@ -23,22 +30,28 @@ L’application permet de gérer des équipes, démarrer ou reprendre une partie
 |---|---|---|
 | ![Arbre de compétences](src/main/resources/screenshots/competence.png) | ![Victoire](src/main/resources/screenshots/win.png) | ![Défaite](src/main/resources/screenshots/lose.png) |
 
+---
+
 ## 📖 Sommaire
 
-- [Fonctionnalités](#-fonctionnalités)
-- [Prérequis](#-prérequis)
-- [Installation](#-installation)
-- [Lancement](#-lancement)
-- [Utilisation](#-utilisation)
-- [Données et sauvegardes](#-données-et-sauvegardes)
-- [Architecture](#-architecture)
-- [Flux général](#-flux-général)
-- [Tests](#-tests)
-- [Structure du projet](#-structure-du-projet)
-- [Documents liés](#-documents-liés)
-- [Javadoc](#-javadoc)
-- [Problèmes fréquents](#-problèmes-fréquents)
-- [Licence](#-licence)
+- [Fonctionnalités](#fonctionnalites)
+- [Prérequis](#prerequis)
+- [Installation](#installation)
+- [Lancement](#lancement)
+- [Utilisation](#utilisation)
+- [Données et sauvegardes](#donnees-et-sauvegardes)
+- [Architecture](#architecture)
+- [Flux général](#flux-general)
+- [Structure du projet](#structure-du-projet)
+- [Tests](#tests)
+- [Problèmes fréquents](#problemes-frequents)
+- [Documentation](#documentation)
+- [Javadoc](#javadoc)
+- [Licence](#licence)
+
+---
+
+<a id="fonctionnalites"></a>
 
 ## ✨ Fonctionnalités
 
@@ -50,6 +63,10 @@ L’application permet de gérer des équipes, démarrer ou reprendre une partie
 - **Récompenses et progression** : les victoires accordent des récompenses et de l’expérience ; les montées de niveau proposent un choix de bonus de statistiques.
 - **Arbre de compétences** : les points gagnés dans la progression servent à débloquer des bonus persistants, par exemple sur les statistiques, l’expérience, la régénération, les objets ou les dégâts.
 - **Ambiance visuelle et sonore** : les écrans utilisent le CSS, les polices, les sprites, les fonds et les médias fournis dans `src/main/resources`.
+
+---
+
+<a id="prerequis"></a>
 
 ## 🧰 Prérequis
 
@@ -63,6 +80,10 @@ Vérifiez les outils installés :
 java -version
 mvn -version
 ```
+
+---
+
+<a id="installation"></a>
 
 ## 📦 Installation
 
@@ -81,6 +102,10 @@ Pour compiler sans lancer l’interface :
 mvn compile
 ```
 
+---
+
+<a id="lancement"></a>
+
 ## ▶️ Lancement
 
 Le plugin JavaFX Maven est configuré avec `ulb.Main` comme classe principale. Depuis la racine du dépôt :
@@ -97,6 +122,10 @@ mvn exec:java
 
 La classe `ulb.Main` crée la fenêtre JavaFX, lui donne le titre « Bugémon », puis affiche le menu principal.
 
+---
+
+<a id="utilisation"></a>
+
 ## 🎮 Utilisation
 
 1. Ouvrez **Gérer équipe**, composez une équipe puis sauvegardez-la.
@@ -104,6 +133,10 @@ La classe `ulb.Main` crée la fenêtre JavaFX, lui donne le titre « Bugémon »
 3. Choisissez un emplacement, donnez un nom à la partie, puis sélectionnez un objet de préparation.
 4. Depuis la carte, entrez dans une salle accessible. En combat, les actions disponibles sont **Attaquer**, **Sac**, **Changer** et **Abandonner**.
 5. Après une victoire, poursuivez l’exploration, choisissez les récompenses et les bonus de niveau proposés. Utilisez **Charger une partie** ou **Continuer** pour reprendre une sauvegarde.
+
+---
+
+<a id="donnees-et-sauvegardes"></a>
 
 ## 🗃️ Données et sauvegardes
 
@@ -117,6 +150,10 @@ Les catalogues statiques sont lus depuis les ressources JSON :
 `JsonDataLoader` charge ces fichiers avec Jackson et indexe les entrées par identifiant ; les identifiants dupliqués sont refusés. Les données de profil (équipes, inventaire, emplacements de partie, progression de tour et arbre de compétences) sont sérialisées au format JSON dans `teams_save.json`, à la racine de travail. Ce fichier est créé par le jeu et ignoré par Git.
 
 La création d’un Bugémon personnalisé écrit dans `custom.json` et copie l’image choisie dans le dossier local `images/`. Ces deux emplacements sont eux aussi ignorés par Git.
+
+---
+
+<a id="architecture"></a>
 
 ## 🧱 Architecture
 
@@ -135,6 +172,10 @@ La logique est séparée en plusieurs ensembles :
 
 Un combat travaille sur des copies d’équipes afin d’isoler sa résolution de l’état persistant. À sa fin, `TeamManagerController` synchronise les PV, l’expérience et les niveaux de l’équipe active, tandis que `GameStateService` et `RunLifecycleController` mettent à jour puis sauvegardent la progression de la partie.
 
+---
+
+<a id="flux-general"></a>
+
 ## 🧬 Flux général
 
 ```text
@@ -150,15 +191,9 @@ ulb.Main
 
 Lorsqu’une salle de combat est ouverte, `BattleFlowController` transforme l’action choisie en une `BattleAction` et délègue sa résolution à `BattleOrchestrationService` et aux classes de `ulb.models.battle`. Le résultat détermine l’attribution d’expérience, les éventuels choix de niveau, les récompenses, l’avancement sur la carte ou l’affichage de la défaite. Les bonus calculés à partir de `SkillTreeProgress` sont appliqués lors du démarrage ou du chargement de la partie.
 
-## 🧪 Tests
+---
 
-Les tests sont répartis entre les contrôleurs, services, modèles de combat et de jeu, analyseurs JSON et interface :
-
-```bash
-mvn test
-```
-
-Les tests GUI reposent sur TestFX. En environnement Linux sans affichage, exécutez-les dans une session graphique virtuelle ; la configuration GitLab CI fournie utilise `xvfb-run` et le rendu logiciel JavaFX.
+<a id="structure-du-projet"></a>
 
 ## 📂 Structure du projet
 
@@ -189,12 +224,46 @@ Les tests GUI reposent sur TestFX. En environnement Linux sans affichage, exécu
 └── team/                            # Documents de suivi et d’architecture
 ```
 
-## 📄 Documents liés
+---
+
+<a id="tests"></a>
+
+## 🧪 Tests
+
+Les tests sont répartis entre les contrôleurs, services, modèles de combat et de jeu, analyseurs JSON et interface :
+
+```bash
+mvn test
+```
+
+Les tests GUI reposent sur TestFX. En environnement Linux sans affichage, exécutez-les dans une session graphique virtuelle ; la configuration GitLab CI fournie utilise `xvfb-run` et le rendu logiciel JavaFX.
+
+---
+
+<a id="problemes-frequents"></a>
+
+## ❗ Problèmes fréquents
+
+- **Erreur de compilation liée à `toList()`** : vérifiez que Maven utilise bien un JDK 18 ; le projet est compilé avec `release` 18.
+- **L’interface JavaFX ou les tests GUI ne démarrent pas** : lancez-les depuis une session graphique. En CI Linux sans écran, utilisez une configuration équivalente à celle de `.gitlab-ci.yml` avec Xvfb et le rendu logiciel.
+- **Aucune partie ne peut être chargée** : créez et sauvegardez d’abord une équipe, puis démarrez une partie dans un emplacement. Les boutons de continuation et de chargement sont désactivés si aucun emplacement n’est chargeable.
+- **Données personnalisées introuvables** : `custom.json` et le dossier `images/` sont relatifs au répertoire depuis lequel l’application est lancée ; conservez-les à la racine de travail si vous souhaitez retrouver ces créations.
+- **Sauvegarde supprimée après un nettoyage Maven** : la configuration de nettoyage Maven cible `teams_save.json`. Copiez ce fichier avant d’exécuter `mvn clean` si vous souhaitez conserver une sauvegarde locale.
+
+---
+
+<a id="documentation"></a>
+
+## 📄 Documentation
 
 - [Rapport d’architecture](team/rapport_architecture.md) : description détaillée de l’architecture, des flux et des composants.
 - [Répartition des tâches](team/repartition_taches.md) : pilotage et statut des histoires réalisées.
 - [Histoires et estimations](team/histoires_estimations.md) : besoins fonctionnels et estimations associés.
 - [Burndown](team/Burnchartdown.ods) : suivi d’équipe au format OpenDocument Spreadsheet.
+
+---
+
+<a id="javadoc"></a>
 
 ## 📄 Javadoc
 
@@ -204,13 +273,9 @@ La documentation API peut être générée avec Maven ; les pages produites sont
 mvn javadoc:javadoc -DadditionalJOption=-Xdoclint:none
 ```
 
-## ❗ Problèmes fréquents
+---
 
-- **Erreur de compilation liée à `toList()`** : vérifiez que Maven utilise bien un JDK 18 ; le projet est compilé avec `release` 18.
-- **L’interface JavaFX ou les tests GUI ne démarrent pas** : lancez-les depuis une session graphique. En CI Linux sans écran, utilisez une configuration équivalente à celle de `.gitlab-ci.yml` avec Xvfb et le rendu logiciel.
-- **Aucune partie ne peut être chargée** : créez et sauvegardez d’abord une équipe, puis démarrez une partie dans un emplacement. Les boutons de continuation et de chargement sont désactivés si aucun emplacement n’est chargeable.
-- **Données personnalisées introuvables** : `custom.json` et le dossier `images/` sont relatifs au répertoire depuis lequel l’application est lancée ; conservez-les à la racine de travail si vous souhaitez retrouver ces créations.
-- **Sauvegarde supprimée après un nettoyage Maven** : la configuration de nettoyage Maven cible `teams_save.json`. Copiez ce fichier avant d’exécuter `mvn clean` si vous souhaitez conserver une sauvegarde locale.
+<a id="licence"></a>
 
 ## 📜 Licence
 
